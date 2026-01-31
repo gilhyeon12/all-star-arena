@@ -1,0 +1,1861 @@
+{
+	"//": "------------------------------------------------------------",
+	"system": {
+		"game_title": "Bleach Vs Naruto Sports Version",
+		"//": "------------------------------------------------------------",
+		"font": {
+			"btn_line": "KaiTi"
+		},
+		"menu": {
+			"tool": {
+				"label": "Tools",
+				"child": {
+					"unstuck": {
+						"label": "Unstuck"
+					},
+					"open_savedata_folder": {
+						"label": "Open Savedata Folder"
+					},
+					"show_redraw_regions": {
+						"label": "Show Redraw Areas"
+					},
+					"device_info": {
+						"label": "Device Information",
+						"child": {
+							"msg_box_title": "Device Information",
+							"oem": "Manufacturer",
+							"cpu": "CPU",
+							"memory": "RAM",
+							"gpu": "GPU"
+						}
+					}
+				}
+			},
+			"plugin": {
+				"label": "Plugins",
+				"child": {
+					"no_plugin": {
+						"label": "No Plugins Detected"
+					}
+				}
+			},
+			"computer": {
+				"label": "Computer"
+			},
+			"help": {
+				"label": "Help",
+				"child": {
+					"website": "Official Website",
+					"website_items": {
+						"game": "1212321 Games",
+						"bbs": "1212321 Official Forum",
+						"bili": "BiliBili",
+						"qq_channel": "QQ Channel"
+					},
+					"about": "About",
+					"about_items": {
+						"msg_box_title": "ABOUT",
+						"ver": "Current Version:",
+						"date": "Release Date:",
+						"air_ver": "AIR Version:",
+						"make": "制作：死神vs火影 竞技更新委员会"
+					}
+				}
+			},
+			"stage": {
+				"label": "Stages",
+				"child": {
+					"congratulate_stage": "[Congratulations] Screen"
+				}
+			}
+		}
+	},
+	"debug": {
+		"p1_label": "P1",
+		"p1_fighter_id": "FighterID",
+		"p1_assist_id": "AssistID",
+		"p2_label": "P2",
+		"p2_fighter_id": "FighterID",
+		"p2_assist_id": "AssistID",
+		"map_id": "MapID",
+		"game_fps": "GameFPS",
+		"errormsg": "ErrorMsg",
+		"btn_label": "TestLabel"
+	},
+	"game_ui": {
+		"confrim": {
+			"exit": {
+				"title": "EXIT GAME",
+				"message": "Do You Want To Exit The Game?"
+			},
+			"back_select": {
+				"title": "BACK TO SELECT",
+				"message": "Return To Character Selection?"
+			},
+			"reselect": {
+				"title": "GO BACK TO SELECT",
+				"message": "Do You Want To Re-Select?"
+			},
+			"back_title": {
+				"title": "GO BACK TO TITLE SCREEN?",
+				"message": "Do You Want To Go Back To The Title Screen?"
+			},
+			"save_and_back_title": {
+				"title": "SAVE AND GO BACK TO TITLE",
+				"message": "Save And Return To The Title Screen?"
+			},
+			"musou_confrim": {
+				"title": "CONFIRM",
+				"message_all_finish_yes": "All Levels Cleared, Do You Want To Enter A Selection Level?",
+				"message_all_finish_no": "Go To Next Level?"
+			},
+			"musou_buy": {
+				"title": "CONTINUE?",
+				"message_prefix": "Confirm Purchase ",
+				"message_suffix": " Unlock Character?"
+			},
+			"musou_back": {
+				"title": "RETURN TO THE MAP",
+				"message": "Do You Want To Return To The Map?"
+			},
+			"musou_clear_coin": {
+				"title": "CLEAR COINS",
+				"message": "Are You Sure You Want To Get Rid Of Your Coins?"
+			},
+			"update": {
+				"title": "UPDATE FOUND",
+				"message_items": {
+					"tips_1": "A New Update Has Been Found!",
+					"tips_2": "Version:",
+					"tips_3": ",",
+					"tips_4": "Update Date:",
+					"tips_5": "Go To Download?"
+				}
+			},
+			"update_congratulation": {
+				"title": "CONGRATULATION",
+				"message": "Latest version!"
+			},
+			"update_error": {
+				"title": "UPDATE ERROR",
+				"message": "An Error Occurred While Updating"
+			},
+			"first_run_switch": {
+				"title": "SWITCH",
+				"message": "Are you willing to turn on Competitive Rules?\nThese Settings limit unfair gameplay, ensuring a fair match between both parties.\n(Note: You can enable/disable these settings using through Settings/Rules CFG)"
+			}
+		},
+		"//": "------------------------------------------------------------",
+		"alert": {
+			"musou_money_not_enough": {
+				"title": "NOT ENOUGH COINS",
+				"message_prefix": "You Don't Have Enough Coins ",
+				"message_suffix": " Coins!"
+			},
+			"musou_not_open": {
+				"title": "MUSOU NOT OPEN",
+				"message": "Musou Is Currently Unavailable"
+			},
+			"musou_add_money": {
+				"title": "MONEY",
+				"message_prefix": "Get More Coins ",
+				"message_suffix": "!"
+			},
+			"online_disconnect": {
+				"title": "DISCONNECT",
+				"message": "Disconnect from host"
+			},
+			"sync_error": {
+				"title": "SYNC ERROR",
+				"message": "An Error Occurred"
+			},
+			"player_exit": {
+				"title": "PLAYER EXIT",
+				"message": "Player exits room"
+			},
+			"no_joystick_connect": {
+				"title": "NO CONTROLLER CONNECTED",
+				"message": "No Controller Detected"
+			},
+			"set_joystick_default": {
+				"title": "CONTROLLER SET TO DEFAULT",
+				"message": "The Controls Have Been Set To Default"
+			},
+			"password_wrong": {
+				"title": "PASSWORD FAIL",
+				"message": "This Password Is Incorrect"
+			},
+			"input_host_name": {
+				"title": "HOST NAME ERROR",
+				"message": "Please Enter The Host Name"
+			},
+			"input_name": {
+				"title": "INPUT NAME",
+				"message": "Please Enter Name"
+			},
+			"switch_rule": {
+				"title": "SWITCH",
+				"message": "All Competitive Settings are Toggled:",
+				"yes": "ON",
+				"no": "OFF"
+			}
+		},
+		"btn_data": {
+			"general": {
+				"yes": {
+					"label": "YES",
+					"txt": "Yes"
+				},
+				"no": {
+					"label": "NO",
+					"txt": "No"
+				},
+				"back": {
+					"label": "BACK",
+					"txt": "Return"
+				},
+				"apply": {
+					"label": "APPLY",
+					"txt": "Apply"
+				}
+			},
+			"set": {
+				"set_all": {
+					"label": "SET ALL",
+					"txt": "Set All"
+				},
+				"set_default": {
+					"label": "SET TO DEFAULT",
+					"txt": "Restore To Default Settings"
+				},
+				"cancel": {
+					"label": "CANCEL",
+					"txt": "Cancel"
+				},
+				"bound_joy": {
+					"label": "JOY",
+					"txt": "Set The Joy"
+				},
+				"none": {
+					"label": "NONE",
+					"txt": "None Detected"
+				},
+				"apply": {
+					"label": "APPLY",
+					"txt": "Apply"
+				}
+			},
+			"lan_game": {
+				"join_game": {
+					"label": "JOIN A GAME",
+					"txt": "Join A LAN Game"
+				},
+				"build_game": {
+					"label": "START A GAME",
+					"txt": "Start A LAN Game"
+				},
+				"profile": {
+					"label": "PROFILE",
+					"txt": "Set Profile Information"
+				},
+				"exit": {
+					"label": "EXIT",
+					"txt": "Quit LAN Mode"
+				}
+			},
+			"lan_game_exit": {
+				"continue": {
+					"label": "CONTINUE?",
+					"txt": "Continue Playing LAN Game"
+				},
+				"exit": {
+					"label": "EXIT",
+					"txt": "Exit LAN Game"
+				}
+			},
+			"musou_pause": {
+				"back_map": {
+					"label": "BACK TO THE MAP",
+					"txt": "Return To The Map"
+				},
+				"move_list": {
+					"label": "MOVELIST",
+					"txt": "Check The Character Movelist"
+				},
+				"continue": {
+					"label": "CONTINUE",
+					"txt": "Continue Playing Musou"
+				}
+			},
+			"pause_dialog": {
+				"back_title": {
+					"label": "BACK TO TITLE?",
+					"txt": "Go Back To The Title Screen?"
+				},
+				"move_list": {
+					"label": "MOVELIST",
+					"txt": "Check The Character Movelist"
+				},
+				"back_select": {
+					"label": "BACK TO SELECT",
+					"txt": "Return To Character Selection"
+				},
+				"training_ai_on": {
+					"label": "TURN ON P2 AI",
+					"txt": "Enable AI Controlled P2"
+				},
+				"training_ai_off": {
+					"label": "TURN OFF P2 AI",
+					"txt": "Disable CPU Controlled P2"
+				},
+				"continue": {
+					"label": "CONTINUE",
+					"txt": "Continue Playing"
+				}
+			}
+		}
+	},
+	"stage_menu": {
+		"version_release": "Sports Version",
+		"version_debug_suffix": "Debug Version",
+		"//": "------------------------------------------------------------",
+		"menu_text": {
+			"team_play": {
+				"txt": "Team Play Mode",
+				"child": {
+					"team_arcade": "Team Arcade Mode",
+					"team_vs_people": "Team Versus",
+					"team_vs_cpu": "Team Versus CPU",
+					"team_watch": "Team Watch"
+				}
+			},
+			"single_play": {
+				"txt": "Single Play",
+				"child": {
+					"single_arcade": "Single Arcade Mode",
+					"single_vs_people": "Single Versus",
+					"single_vs_cpu": "Single Versus CPU",
+					"single_watch": "Single Watch"
+				}
+			},
+			"musou_play": {
+				"txt": "Musou Mode",
+				"child": {
+					"musou_arcade": "Musou Arcade",
+					"musou_vs_people": "Musou Versus",
+					"musou_vs_cpu": "Musou Versus CPU",
+					"musou_watch": "Musou Watch",
+					"musou_training": "Musou Training Mode"
+				}
+			},
+			"training": {
+				"txt": "Training Mode"
+			},
+			"settings": {
+				"txt": "Settings",
+				"child": {
+					"game": "基础属性设置",
+					"rule": "玩法规则设定"
+				}
+			},
+			"misc": {
+				"txt": "Miscellaneous",
+				"child": {
+					"staff": "Staff",
+					"issues": "Report Issues",
+					"update": "Check For Updates",
+					"lan_play": "LAN Play"
+				}
+			},
+			"exit": {
+				"txt": "Exit Game"
+			}
+		},
+		"shortcut": {
+			"bili": "BiliBili",
+			"website": "Official Website"
+		}
+	},
+	"stage_how_to_play": {
+		"tips_1": "Left-Right Buttons control the character",
+		"tips_2": "Defense Key",
+		"tips_3": "Normal Attack key (consective)",
+		"tips_4": "Jump Button (Press while in the air for double jump)",
+		"tips_5": "Instant Dash Key",
+		"tips_6": "Second Attack Key, Basic Skill",
+		"tips_7": "Special Skill Key (Requires Energy)",
+		"tips_8": "Assist Key"
+	},
+	"stage_loading": {
+		"preload": {
+			"type": {
+				"sounds": "Sounds",
+				"library": "Run Library",
+				"effect": "Effects",
+				"fonts": "Font",
+				"bitmaps": "Bitmaps"
+			},
+			"tips": {
+				"release_resource": "Loading Game: Preparing Resources",
+				"release_resource_fail": "Loading Game: Preparing Resources！",
+				"now_loading": "Starting Game: Loading Resources -",
+				"loading_config": "Starting Game: Loading Settings",
+				"loading_config_fail": "Game Start Failed: Failed To Load Settings File!",
+				"loading_game_resource": "Starting Match: Preparing Resources",
+				"progress_overflow": "Loading Complete"
+			}
+		},
+		"load_fighter": {
+			"loading_tip": "Loading",
+			"type": {
+				"maps": "Loading Maps",
+				"fighter": "Loading Characters",
+				"assistant": "Loading Assists",
+				"bgm": "Loading BGM",
+				"undefined": "Loading Undefined"
+			}
+		}
+	},
+	"stage_settings": {
+		"abled": {
+			"enabled": {
+				"label": "ENABLED",
+				"txt": "Enabled."
+			},
+			"disabled": {
+				"label": "DISABLED",
+				"txt": "Disabled."
+			}
+		},
+		"//": "------------------------------------------------------------",
+		"p1_key_set": {
+			"label": "P1 KEY SET",
+			"txt": "Player 1 Key Control Settings"
+		},
+		"p2_key_set": {
+			"label": "P2 KEY SET",
+			"txt": "Player 2 Key Control Settings"
+		},
+		"p1_joystick_set": {
+			"label": "P1 CONTROLLER SET",
+			"txt": "Player 1 Controller Settings"
+		},
+		"p2_joystick_set": {
+			"label": "P2 CONTROLLER SET",
+			"txt": "Player 2 Controller Settings"
+		},
+		"com_level": {
+			"label": "COM LEVEL",
+			"txt": "Set The Level Of The Computer",
+			"child": {
+				"very_easy": {
+					"label": "VERY EASY",
+					"txt": "Very Easy Difficulty"
+				},
+				"easy": {
+					"label": "EASY",
+					"txt": "Easy Difficulty"
+				},
+				"normal": {
+					"label": "NORMAL",
+					"txt": "Normal Difficulty Level"
+				},
+				"hard": {
+					"label": "HARD",
+					"txt": "Hard Difficulty"
+				},
+				"very_hard": {
+					"label": "VERY HARD",
+					"txt": "Very Hard Difficulty"
+				},
+				"hell": {
+					"label": "HELL",
+					"txt": "Hell Difficulty"
+				}
+			}
+		},
+		"operate_mode": {
+			"label": "OPERATE MODE",
+			"txt": "Key Control Mode",
+			"child": {
+				"normal": {
+					"label": "NORMAL",
+					"txt": "Normal Difficulty"
+				},
+				"classic": {
+					"label": "CLASSIC",
+					"txt": "Classic Mode"
+				}
+			}
+		},
+		"life": {
+			"label": "LIFE",
+			"txt": "Change The Amount Of Life.",
+			"child": {
+				"p50": {
+					"label": "50%",
+					"txt": "50% of Default Health."
+				},
+				"p100": {
+					"label": "100%",
+					"txt": "100% of Default Health."
+				},
+				"p200": {
+					"label": "200%",
+					"txt": "200% HP"
+				},
+				"p300": {
+					"label": "300%",
+					"txt": "300% HP"
+				},
+				"p500": {
+					"label": "500%",
+					"txt": "500% Of Default Health"
+				}
+			}
+		},
+		"time": {
+			"label": "TIME",
+			"txt": "Time Of Match",
+			"child": {
+				"s30": {
+					"label": "30s",
+					"txt": "30 Seconds"
+				},
+				"s60": {
+					"label": "60s",
+					"txt": "60 Seconds."
+				},
+				"s90": {
+					"label": "90s",
+					"txt": "90 Seconds"
+				},
+				"s-1": {
+					"label": "∞",
+					"txt": "Infinite Time"
+				}
+			}
+		},
+		"sound": {
+			"label": "SOUNDS",
+			"txt": "Set The Level Of The Game Sounds.",
+			"child": {
+				"p0": {
+					"label": "0%",
+					"txt": "0%"
+				},
+				"p10": {
+					"label": "10%",
+					"txt": "10%"
+				},
+				"p30": {
+					"label": "30%",
+					"txt": "30%"
+				},
+				"p50": {
+					"label": "50%",
+					"txt": "50%"
+				},
+				"p70": {
+					"label": "70%",
+					"txt": "70%"
+				},
+				"p100": {
+					"label": "100%",
+					"txt": "100%"
+				}
+			}
+		},
+		"bgm": {
+			"label": "BGM",
+			"txt": "Set Level Of The Background Music",
+			"child": {
+				"p0": {
+					"label": "0%",
+					"txt": "0%"
+				},
+				"p10": {
+					"label": "10%",
+					"txt": "Sound at 10%"
+				},
+				"p30": {
+					"label": "30%",
+					"txt": "Sound at 30%"
+				},
+				"p50": {
+					"label": "50%",
+					"txt": "Sound at 50%"
+				},
+				"p70": {
+					"label": "70%",
+					"txt": "Sound at 70%"
+				},
+				"p100": {
+					"label": "100%",
+					"txt": "Sound at 100%"
+				}
+			}
+		},
+		"quality": {
+			"label": "QUALITY",
+			"txt": "Set The Image Quality.",
+			"child": {
+				"low": {
+					"label": "LOW",
+					"txt": "Low Quality (Capped at 30 Frames)"
+				},
+				"medium": {
+					"label": "MEDIUM",
+					"txt": "Medium Quality"
+				},
+				"high": {
+					"label": "HIGH",
+					"txt": "High Quality"
+				},
+				"best": {
+					"label": "BEST",
+					"txt": "Best Quality."
+				}
+			}
+		},
+		"display_mode": {
+			"label": "DISPLAY MODE",
+			"txt": "Resolution Settings.",
+			"child": {
+				"full": {
+					"label": "FULL SCREEN",
+					"txt": "Take Up The Full Screen"
+				},
+				"win": {
+					"label": "WINDOWED",
+					"txt": "Windowed Mode"
+				}
+			}
+		},
+		"smooth_low_quality": {
+			"label": "SMOOTH LOW QUALITY",
+			"txt": "Make The Low Quality Sprites Smoother."
+		},
+		"music_type": {
+			"label": "MUSIC TYPE",
+			"txt": "Set The Type Of Music.",
+			"child": {
+				"classical": {
+					"label": "CLASSICAL",
+					"txt": "The Original Music"
+				},
+				"customized": {
+					"label": "CUSTOMIZED",
+					"txt": "Sports Version's Custom Music"
+				}
+			}
+		},
+		"skip_start": {
+			"label": "SKIP START",
+			"txt": "Skip the opening animation"
+		},
+		"steel_body_freeze": {
+			"label": "STEEL BODY FREEZE",
+			"txt": "Add hitstop when an attack hits a Silver-Armor Attack"
+		},
+		"slow_down_time": {
+			"label": "SLOW DOWN",
+			"txt": "Slow Down Time"
+		},
+		"auto_match_random": {
+			"label": "AUTO MATCH RDM",
+			"txt": "Automatic Random Matching"
+		},
+		"random_old_fighter": {
+			"label": "RANDOM OLD FIGHTER",
+			"txt": "Toggle if old characters can be chosen when picking random select."
+		},
+		"auto_show_more": {
+			"label": "AUTO SHOW MORE",
+			"txt": "Auto show more fighters"
+		},
+		"show_fps": {
+			"label": "SHOW FPS",
+			"txt": "Show FPS"
+		},
+		"auto_update_check": {
+			"label": "AUTO UPDATE CHECK",
+			"txt": "Check for updates automatically"
+		}
+	},
+	"stage_rule": {
+		"switch": {
+			"label": "SWITCH SPORTS RULES",
+			"txt": "Toggle All Competitive Settings"
+		},
+		"bankai": {
+			"label": "ALLOW BANKAI",
+			"txt": "Set to whether you can transform during a match."
+		},
+		"god_level": {
+			"label": "GOD LEVEL",
+			"txt": "Enable God Level Characters."
+		},
+		"exact_moving": {
+			"label": "*EXACT MOVEMENT",
+			"txt": "Force Exact Character Movement."
+		},
+		"camera_zoom_rate": {
+			"label": "CAMERA ZOOM RATE",
+			"txt": "Change the rate of speed for the camera zoom",
+			"child": {
+				"p50": {
+					"label": "50%",
+					"txt": "50% Of Zoom Rate."
+				},
+				"p60": {
+					"label": "60%",
+					"txt": "60% Of Zoom Rate."
+				},
+				"p70": {
+					"label": "70%",
+					"txt": "70% Of Zoom Rate."
+				},
+				"p80": {
+					"label": "80%",
+					"txt": "80% Of Zoom Rate."
+				},
+				"p90": {
+					"label": "90%",
+					"txt": "90% Of Zoom Rate."
+				},
+				"p100": {
+					"label": "100%",
+					"txt": "Default Zoom Rate."
+				}
+			}
+		},
+		"infinite_atk_chk": {
+			"label": "*ANTI INFINITE",
+			"txt": "Prevent players from having the same move be used twice in a combo."
+		},
+		"standard_limit": {
+			"label": "STANDARD LIMIT",
+			"txt": "标准比赛限制"
+		},
+		"combo_burden": {
+			"label": "COMBO BURDEN",
+			"txt": "连段减负"
+		},
+		"original_qi": {
+			"label": "ORIGINAL METER",
+			"txt": "Initial Qi amount",
+			"child": {
+				"p0": {
+					"label": "0%",
+					"txt": "0%"
+				},
+				"p100": {
+					"label": "Default Meter Rate.",
+					"txt": "The Default Meter Rate"
+				},
+				"p200": {
+					"label": "200%",
+					"txt": "200% Of The Default Meter"
+				},
+				"p300": {
+					"label": "300%",
+					"txt": "300% Of The Default Meter"
+				}
+			}
+		},
+		"original_assist": {
+			"label": "ORIGINAL ASSIST",
+			"txt": "Initial Assist Available"
+		},
+		"special_skill": {
+			"label": "SPECIAL SKILLS",
+			"txt": "Spirit Burst/Substitution Jutsu Settings."
+		},
+		"replace_special": {
+			"label": "ALTERED CB INPUT",
+			"txt": "Use Combination for Special Moves（W/S + O）"
+		},
+		"special_mis_prot": {
+			"label": "SPECIAL MIS PROT",
+			"txt": "Special mistake protect"
+		},
+		"upload_record": {
+			"label": "UPLOAD RECORD",
+			"txt": "Upload Match Data to Cloud"
+		}
+	},
+	"stage_musou": {
+		"value_txt": {
+			"exp": "Exp:",
+			"hp": "Hp:",
+			"qi": "Meter:",
+			"en": "Energy:",
+			"pw": "Power:"
+		}
+	},
+	"name": {
+		"map": {
+			"random": "Random Stage",
+			"gense": "Real World",
+			"rukongai": "Soul City",
+			"seireitei": "Soul Society",
+			"sokyoku": "Sokyoku",
+			"zangetsu_haka": "Zanpakuto Graveyard",
+			"goteijusantai": "Gotei 13 Base",
+			"uchinaru_sekai": "Zangetsu's Inner World",
+			"hollow_forset": "Hollow Forest",
+			"shotengai": "空座商店街",
+			"naruki": "鸣木市",
+			"las_noches": "虚夜宫",
+			"konoha_mura": "Village Hidden In The Leaf",
+			"uchiha_mura": "Uchiha's Hideout",
+			"kiri_no_mura": "Village Hidden In The Fog",
+			"shumatsu_no_tani": "Valley Of The End",
+			"spring": "Hot Springs",
+			"dangai": "[Non-Sports] Dangai",
+			"karakura": "[Non-Sports] Karakura Town",
+			"seireimon": "[Non-Sports] Gate Of The Soul Society ",
+			"juuichi_no_bantai": "[Non-Sports] Gotei 13 Base",
+			"konoha_roof": "[Non-Sports] Roof Of Konoha",
+			"konoha_inner": "[Non-Sports] Konoha",
+			"desert": "[Non-Sports] Desert",
+			"snowfield": "[Non-Sports] Snowfield",
+			"shinrin": "[Non-Competitive] Jungle"
+		},
+		"assist": {
+			"kon": "Kon",
+			"orihime": "Orihime",
+			"yoruichi": "Yoruichi",
+			"uryuu": "Uryu",
+			"kenpachi": "Kenpachi",
+			"ogihci_vaste_lord": "天锁斩月 死神之力 完全虚化",
+			"yachiru": "Yachiru",
+			"starrk_resurrection": "柯雅泰·史塔克 归刃",
+			"halibel": "Harribel",
+			"grimmjow": "Grimmjow",
+			"soifon": "Soi Fon",
+			"nemu": "Nemu",
+			"ichigo_dangai": "Ichigo (Dangai)",
+			"yamamoto": "Genryusai Yamamoto",
+			"gin": "Gin",
+			"rangiku": "Rangiku",
+			"byakuya": "Kuchiki Byakuya",
+			"ikkaku": "Ikkaku",
+			"nel": "Nel",
+			"renji": "Renji Abarai",
+			"shunsui": "Kyoraku Shunsui",
+			"kira": "Izuru Kira",
+			"bonnie": "Bonnie",
+			"hiyori": "Hiyori Sarugaki",
+			"toushirou": "Toshiro Hitsugaya",
+			"isane": "Isane Kotetsu",
+			"urahara": "Kisuke Urahara",
+			"aizen_muken": "蓝染·惣右介 无间封印",
+			"//": "------------------------------------------------------------",
+			"gaara": "Gaara",
+			"temari": "Temari",
+			"ino": "Ino",
+			"tenten": "Tenten",
+			"itachi": "Itachi",
+			"hinata": "Hinata",
+			"tsunade": "Tsunade",
+			"onoki": "Onoki",
+			"minato": "Minato",
+			"jiraiya": "Jiraiya",
+			"suigetsu_taka": "Suigetsu (Akatsuki)",
+			"sai": "Sai",
+			"madara": "Madara",
+			"kimimaro": "Kimimaro",
+			"shikamaru": "Shikimaru",
+			"obito": "Obito",
+			"sakura_byakugo": "春野·樱 百豪",
+			"hiruko": "Hiruko",
+			"kabuto": "Kabuto",
+			"utakata": "Utakata",
+			"naruto": "Naruto Uzumaki",
+			"sasuke_amenotejikara": "宇智波·佐助 天手力",
+			"zetsu": "Zetsu",
+			"tayuya": "Tayuya",
+			"fukasaku": "Fukasaku & Shima",
+			"choji": "Choji Akimichi",
+			"shishio": "Makoto Shishio",
+			"debug": "Debug Mode",
+			"random": "Random Assist",
+			"random_bleach": "Random Assist (Bleach)",
+			"random_naruto": "Random Assist (Naruto)"
+		},
+		"fighter": {
+			"ichigo": {
+				"name": "黑崎·一护 始解",
+				"says": [
+					"Fighting by itself is for nothing but survival.",
+					"I don't know why, but it all feels amazing!",
+					"It's terrifying because we can't see it."
+				]
+			},
+			"ichigo_half_mask": {
+				"name": "黑崎·一护 虚化暴走",
+				"says": [
+					"Tell me, what is the difference between a king and a mount? |Don't tell me the difference between two feet and four feet!",
+					"There's only one answer, and that is instinct! |It is engraved on the oldest of beings, a thorough and incomparable murderous instinct!",
+					"What you lack is that, this raw instinct! |That's why you are weaker than me!"
+				]
+			},
+			"ichigo_bankai": {
+				"name": "Ichigo (Bankai)",
+				"says": [
+					"Fighting by itself is for nothing but survival.",
+					"I don't know why, but it all feels amazing!",
+					"It's terrifying because we can't see it."
+				]
+			},
+			"ichigo_hmb": {
+				"name": "黑崎·一护 虚化暴走 卍解",
+				"says": [
+					"Tell me, what is the difference between a king and a mount? |Don't tell me the difference between two feet and four feet!",
+					"There's only one answer, and that is instinct! |It is engraved on the oldest of beings, a thorough and incomparable murderous instinct!",
+					"What you lack is that, this raw instinct! |That's why you are weaker than me!"
+				]
+			},
+			"ichigo_vizard": {
+				"name": "黑崎·一护 虚化 卍解",
+				"says": [
+					"Fighting by itself is for nothing but survival.",
+					"I don't know why, but it all feels amazing!",
+					"It's terrifying because we can't see it."
+				]
+			},
+			"ichigo_zero": {
+				"name": "黑崎·一护",
+				"says": [
+					"Fighting by itself is for nothing but survival.",
+					"I don't know why, but it all feels amazing!",
+					"It's terrifying because we can't see it."
+				]
+			},
+			"ogihci": {
+				"name": "斩月 死神之力",
+				"says": [
+					"Tell me, what is the difference between a king and a mount? |Don't tell me the difference between two feet and four feet!",
+					"There's only one answer, and that is instinct! |It is engraved on the oldest of beings, a thorough and incomparable murderous instinct!",
+					"What you lack is that, this raw instinct! |That's why you are weaker than me!"
+				]
+			},
+			"ogihci_bankai": {
+				"name": "天锁斩月 死神之力",
+				"says": [
+					"Tell me, what is the difference between a king and a mount? |Don't tell me the difference between two feet and four feet!",
+					"There's only one answer, and that is instinct! |It is engraved on the oldest of beings, a thorough and incomparable murderous instinct!",
+					"What you lack is that, this raw instinct! |That's why you are weaker than me!"
+				]
+			},
+			"rukia": {
+				"name": "朽木·露琪亚 义骸",
+				"says": [
+					"Is reincarnation our fate? Or is it exaggerated? | If it is reincarnation, should the circle of reincarnation be destroyed? | Or should we accept it?",
+					"People can have hope because they don't know death."
+				]
+			},
+			"rukia_shikai": {
+				"name": "Rukia Kuchiki (Shikai)",
+				"says": [
+					"Is reincarnation our fate? Or is it exaggerated? | If it is reincarnation, should the circle of reincarnation be destroyed? | Or should we accept it?",
+					"People can have hope because they don't know death."
+				]
+			},
+			"renji": {
+				"name": "Abarai Renji",
+				"says": [
+					"I vowed to save her...I made this oath to nobody, just to me - my soul!",
+					"I shall put that unreachable fang in flames so that I need not look at that star, so that this throat will not be torn apart.",
+					"In fact, I'm very scared. Even though it looks like I'm follwing you closely and I'm ready to fight at any time,|I don't even dare to step on your shadow...|Actually, I' really scared...",
+					"Seeking fights... Before that, what did you want for... | Woohoo, tonight, I scream again."
+				]
+			},
+			"renji_bankai": {
+				"name": "Abarai Renji (Bankai)",
+				"says": [
+					"I vowed to save her...I made this oath to nobody, just to me - my soul!",
+					"I shall put that unreachable fang in flames so that I need not look at that star, so that this throat will not be torn apart.",
+					"In fact, I'm very scared. Even though it looks like I'm following you closely and I'm ready to fight at any time,|I don't even dare to step on your shadow...|Actually, I' really scared...",
+					"Seeking fights... Before that, what did you want for... | Woohoo, tonight, I scream again."
+				]
+			},
+			"kenpachi": {
+				"name": "Zaraki Kenpachi",
+				"says": [
+					"Come on, let's fight!",
+					"You're too afraid of death to fight.",
+					"Every time we turn away from self-esteem, we become more like beasts. |Every Heart Should Stay Away From The Beast."
+				]
+			},
+			"ikkaku": {
+				"name": "Ikkaku",
+				"says": [
+					"All of us, from the moment we're born, must die.",
+					"One who cannot go beyond death, has to understand something.",
+					"The end always exists before the beginning."
+				]
+			},
+			"gin": {
+				"name": "Gin",
+				"says": [
+					"I have nothing to say!",
+					"I'm sorry, Captain Aizen.",
+					"I just can't help it.."
+				]
+			},
+			"chad": {
+				"name": "Yasutora Sado (Chad)",
+				"says": [
+					"I can still protect you, even without a sword in my hand.",
+					"If I keep holding a sword, I can't hold you tight.",
+					"......."
+				]
+			},
+			"sado_muerte": {
+				"name": "Yasutora Sado (La Muerte)",
+				"says": [
+					"I can still protect you, even without a sword in my hand.",
+					"If I keep holding a sword, I can't hold you tight.",
+					"......."
+				]
+			},
+			"uryuu": {
+				"name": "Ishida Uryu",
+				"says": [
+					"I swear on the pride of the Quincy, I will kill you!",
+					"Weakling..."
+				]
+			},
+			"uryuu_ginreigojiaku": {
+				"name": "Ishida Uryu (Ginrei Kojaku)",
+				"says": [
+					"I swear on the pride of the Quincy, I will kill you!",
+					"Weakling..."
+				]
+			},
+			"toushirou": {
+				"name": "Toshiro Hitsugaya",
+				"says": [
+					"Under the strong sunlight, the footprints printed on ice disappear without a trace. | Don't be afraid of tricks, this world is built on lies.",
+					"Don't call me Toshiro, my name is Captain Hitsugaya!",
+					"Not Even Close!"
+				]
+			},
+			"toushirou_bankai": {
+				"name": "Toshiro Hitsugaya (Bankai)",
+				"says": [
+					"Under the strong sunlight, the footprints printed on ice disappear without a trace. | Don't be afraid of tricks, this world is built on lies.",
+					"Don't call me Toshiro, my name is Captain Hitsugaya!",
+					"Not Even Close!"
+				]
+			},
+			"byakuya": {
+				"name": "Byakuya",
+				"says": [
+					"Too slow. Even your fall is like this.",
+					"Oh... I never thought that a normal person could understand the feelings of the nobles.",
+					"A person like you died a thousand years earlier under my power."
+				]
+			},
+			"byakuya_bankai": {
+				"name": "Byakuya Kuchiki (Bankai)",
+				"says": [
+					"Too slow. Even your fall is like this.",
+					"Oh... I never thought that a normal person could understand the feelings of the nobles.",
+					"A person like you died a thousand years earlier under my power."
+				]
+			},
+			"ulquiorra": {
+				"name": "Ulquiorra Cifer",
+				"says": [
+					"The Sun has been struck down by me.",
+					"I see everything.",
+					"Humanity, unpredictable creatures."
+				]
+			},
+			"ulquiorra_murcielago": {
+				"name": "Ulquiorra Cifer (Murcielago)",
+				"says": [
+					"The Sun has been struck down by me.",
+					"I see everything.",
+					"Humanity, unpredictable creatures."
+				]
+			},
+			"aizen": {
+				"name": "Sosuke Aizen",
+				"says": [
+					"At the beginning of the world, there were no truths, and there were no lies, only the facts seemed to exist.|However, all the things that existed in this world|will mistake the facts that are beneficial to themselves as true",
+					"A life without power is wasted!",
+					"You shouldn't judge the dead......",
+					"At your level, I won't allow you to betray me again!",
+					"The reason why we think the flowers on the rock wall are beautiful is that | we are standing on the rock wall,|you don’t have to be afraid, because we are like the flowers, and our roots have not fallen."
+				]
+			},
+			"mayuri": {
+				"name": "Mayuri Kurotsuchi",
+				"says": [
+					"I'm not interested in you anymore, so leave.",
+					"Oops, I wasted too much of my time.",
+					"The medicine is 8 times a day, and the machine experiment is 5 times a day, I will try to avoid killing you as much as possible."
+				]
+			},
+			"orihime": {
+				"name": "Orihime",
+				"says": [
+					"If I was a raindrop...|Then, could I connect to someone's heart as I connect the never-meeting sky and earth...|",
+					"If only we coul live five times. |That way I'd live in five different towns,|would have five different jobs...and fall in love with the same person five times."
+				]
+			},
+			"grimmjow": {
+				"name": "Grimmjow Jeagerjaquez",
+				"says": [
+					"It's not love, it's not light...Only destruction is proof of existence!",
+					"Ah hahahaha...This is just perfect, Soul Reaper, it's finally worth it killing you.",
+					"I don't understand, how could I lose to someone like you!"
+				]
+			},
+			"soifon": {
+				"name": "Soi Fon",
+				"says": [
+					"Your shadow is like...a meaningless poisonous needle...stitching its way to my death.",
+					"Your light is like... the thunder that gently hit the water tower...and cut off my way of life."
+				]
+			},
+			"starrk": {
+				"name": "Coyote Starrk",
+				"says": [
+					"The unbearable loneliness sucks the bone and sucks the marrow, no matter what, you shouldn't be alone, even if you have to divide yourself in two.",
+					"I hate loneliness, but it follows me everywhere."
+				]
+			},
+			"yoruichi": {
+				"name": "Yoruichi",
+				"says": [
+					"If you lose now, there's no coming back.",
+					"Do you think this level of Shunpo can catch me? |If you want to catch me, just do it,|The speed of my Shunpo is not at a level that you can catch up with.",
+					"Don't take people too lightly, |I did give up the title of Squad Captain,|but I don't remember giving up any another name."
+				]
+			},
+			"aizen_captain": {
+				"name": "Sosuke Aizen (Captain)",
+				"says": [
+					"At the beginning of the world, there were no truths, and there were no lies, only the facts seemed to exist.|However, all the things that existed in this world|will mistake the facts that are beneficial to themselves as true",
+					"A life without power is wasted!",
+					"You shouldn't judge the dead......",
+					"At your level, I won't allow you to betray me again!",
+					"The reason why we think the flowers on the rock wall are beautiful is that | we are standing on the rock wall,|you don’t have to be afraid, because we are like the flowers, and our roots have not fallen."
+				]
+			},
+			"tensa": {
+				"name": "天锁斩月 灭却师之力",
+				"says": [
+					"I don't want to protect them.",
+					"You have lost, you should breathe.",
+					"I, too, have something I want to protect."
+				]
+			},
+			"dordoni": {
+				"name": "Dordoni Alessandro Del Socaccio",
+				"says": [
+					"A pleasure to meet you!",
+					"What a shame that I can't fight you at your best!",
+					"This has really moved me."
+				]
+			},
+			"urahara": {
+				"name": "Kisuke Urahara",
+				"says": [
+					"Don't worry, I'll make a discount just for you!",
+					"Those who teeter on the edge will never be truly human, they're bound to be banned from the Soul Society.",
+					"Teeter on this edge,|nowhere to go, no place to go back to."
+				]
+			},
+			"//": "------------------------------------------------------------",
+			"naruto": {
+				"name": "Naruto Uzumaki",
+				"says": [
+					"As long as you're the best ninja in the village, you can become Hokage!",
+					"I'll never give up, because that is my ninja way!",
+					"Alright! I've taken a path I believe in, to live without regrets!"
+				]
+			},
+			"naruto_ver1": {
+				"name": "漩涡·鸣人 尾兽外衣",
+				"says": [
+					"只要你变成全村人都认可的最棒忍者，|你就可以把火影这个名字抢过来！",
+					"我是绝对不会放弃的，因为这就是我的忍道！",
+					"好！我决定了,我要走一条属于我自己的忍道,|朝着绝对不让自己后悔的道路一直大步的走下去！"
+				]
+			},
+			"naruto_ver2": {
+				"name": "漩涡·鸣人 尾兽化暴走",
+				"says": [
+					"..."
+				]
+			},
+			"naruto_sennin": {
+				"name": "漩涡·鸣人 仙人模式",
+				"says": [
+					"As long as you're the best ninja in the village, you can become Hokage!",
+					"I'll never give up, because that is my ninja way!",
+					"Alright! I've taken a path I believe in, to live without regrets!"
+				]
+			},
+			"naruto_kyubi": {
+				"name": "漩涡·鸣人 九尾查克拉模式",
+				"says": [
+					"As long as you're the best ninja in the village, you can become Hokage!",
+					"I'll never give up, because that is my ninja way!",
+					"Alright! I've taken a path I believe in, to live without regrets!"
+				]
+			},
+			"sakura": {
+				"name": "Sakura",
+				"says": [
+					"I am always being protected by others, so I'm not in balance...Since this is the case, this time...I must be the one who protects those I cherish...",
+					"I've always...wished I could be a powerful ninja..."
+				]
+			},
+			"sasuke": {
+				"name": "Sasuke",
+				"says": [
+					"Too many limitations will only make us lose ourselves.",
+					"My loneliness is not comparable to being sad after being blamed for the death of your own parents.",
+					"I am an avenger, I was born in revenge, and in revenge I'll lose everything."
+				]
+			},
+			"sasuke_juin": {
+				"name": "Sasuke Uchiha (Curse Mark)",
+				"says": [
+					"Too many limitations will only make us lose ourselves.",
+					"My loneliness is not comparable to being sad after being blamed for the death of your own parents.",
+					"I am an avenger, I was born in revenge, and in revenge I'll lose everything."
+				]
+			},
+			"sasuke_taka": {
+				"name": "Sasuke Uchiha (Akatsuki)",
+				"says": [
+					"Too many limitations will only make us lose ourselves.",
+					"My loneliness is not comparable to being sad after being blamed for the death of your own parents.",
+					"I am an avenger, I was born in revenge, and in revenge I'll lose everything."
+				]
+			},
+			"sasuke_susanoo": {
+				"name": "Sasuke Uchiha (Eternal Mangekyo Sharingan)",
+				"says": [
+					"Too many limitations will only make us lose ourselves.",
+					"My loneliness is not comparable to being sad after being blamed for the death of your own parents.",
+					"I am an avenger, I was born in revenge, and in revenge I'll lose everything."
+				]
+			},
+			"karin": {
+				"name": "Karin",
+				"says": [
+					"Sasuke, I want to be with him...",
+					"I really want to see him again...",
+					"Sasuke, where are you? Wait for me..."
+				]
+			},
+			"juggo": {
+				"name": "Jugo",
+				"says": [
+					".......",
+					"HAHAHAHAHAHA!",
+					"I won't lose control again."
+				]
+			},
+			"itachi": {
+				"name": "Itachi Uchiha",
+				"says": [
+					"Excellence can be quite annoying...",
+					"This is the truth of humanity, who think they know what they know, deny what they do not know, but only think they are in the right...",
+					"As long as people are living by their own knowledge and beliefs and are bound by them,|that's what we call reality. |However, knowledge and belief are ambiguous things, and reality may be just an illusion."
+				]
+			},
+			"deidara": {
+				"name": "Deidara",
+				"says": [
+					"Art is an explosion! Hmm.",
+					"My entrance is art! Hmm.",
+					"Art is a fleeting beauty, the moment it disappears, it's called beautiful. Hmm."
+				]
+			},
+			"sasori": {
+				"name": "Sasori",
+				"says": [
+					"Undying, Art is an eternal beauty.",
+					"If you want to struggle against me, there's nothing to do,|I'll turn you into a ghost with my collection!",
+					"I hate others, and I don't like anyone either! |I'll fix you right up!"
+				]
+			},
+			"kakashi": {
+				"name": "Kakashi Hatake",
+				"says": [
+					"Ninjas can't think with common sense!",
+					"Don't worry, I will protect you even if I die. I will never let my partners die.",
+					"You can't beat me now, you don't understand what real strength is!"
+				]
+			},
+			"kakashi_kamui": {
+				"name": "Kakashi Hatake (Kamui)",
+				"says": [
+					"Ninjas can't think with common sense!",
+					"Don't worry, I will protect you even if I die. I will never let my partners die.",
+					"You can't beat me now, you don't understand what real strength is!"
+				]
+			},
+			"lee": {
+				"name": "Rock Lee",
+				"says": [
+					"The Lotus of Konoha will bloom again, and I will become stronger!",
+					"If you can't do 500 push-ups, you jump-rope 1200 times! If you can't do that, then you'll kick wood 2000 times!",
+					"I'm gonna prove that even without ninjutsu or genjutsu you can still be a great ninja! That's my life, and it is my ninja way!",
+					"If you're in danger, I'll protect you with my life. I've said this before, I'll protect you until the end."
+				]
+			},
+			"lee_tomon": {
+				"name": "Rock Lee (Inner Gates)",
+				"says": [
+					"The Lotus of Konoha will bloom again, and I will become stronger!",
+					"If you can't do 500 push-ups, you jump-rope 1200 times! If you can't do that, then you'll kick wood 2000 times!",
+					"I'm gonna prove that even without ninjutsu or genjutsu you can still be a great ninja! That's my life, and it is my ninja way!",
+					"If you're in danger, I'll protect you with my life. I've said this before, I'll protect you until the end."
+				]
+			},
+			"neji": {
+				"name": "Neji",
+				"says": [
+					"I don't think this is the end!",
+					"From birth, a person's destiny is decided until the end.",
+					"Your destiny was sealed the moment I became your opponent."
+				]
+			},
+			"gaara": {
+				"name": "Gaara",
+				"says": [
+					"Is that all you can do?"
+				]
+			},
+			"temari": {
+				"name": "Temari",
+				"says": [
+					"Idiot!",
+					"Hmph! Vulnerable!"
+				]
+			},
+			"jiraiya": {
+				"name": "Jiraiya",
+				"says": [
+					"Regardless of whether it is north, south, east, or west, the entire world has the invincible white-haired Sannin toad messenger.",
+					"For a ninja, it doesn't matter how you live, but how you die is the most important thing.",
+					"A ninja is a person that can endure everything."
+				]
+			},
+			"orochimaru": {
+				"name": "Orochimaru",
+				"says": [
+					"The deal is just a trick to paralyze the opponent, and history will be rewritten from now on!",
+					"The tangible things will perish sooner or later, but the invisible things last forever.",
+					"Physical life is too short...too temporary..."
+				]
+			},
+			"killerbee": {
+				"name": "Killer Bee",
+				"says": [
+					"You fool, you're a damn idiot!",
+					"Who's the best! I am the best! Who's the best!",
+					"Yo! You're a fool, you're an idiot! Yo!"
+				]
+			},
+			"pain": {
+				"name": "Pain",
+				"says": [
+					"......."
+				]
+			},
+			"konan": {
+				"name": "Konan",
+				"says": [
+					"......."
+				]
+			},
+			"obito": {
+				"name": "Masked Obito",
+				"says": [
+					"People who don't value their friends are lower than scum!",
+					"The more brutal the life, the greater is the hole in the heart.",
+					"There is no difference between hope and delusion in this world, |it's no more than a horrible rhetoric.",
+					"I am someone nobody wants to become..."
+				]
+			},
+			"obito_trueColors": {
+				"name": "Obito (Unmasked)",
+				"says": [
+					"People who don't value their friends are lower than scum!",
+					"The more brutal the life, the greater is hole in the heart.",
+					"There is no difference between hope and delusion in this world, |it's no more than a horrible rhetoric.",
+					"I am someone nobody wants to become..."
+				]
+			},
+			"madara": {
+				"name": "Madara",
+				"says": [
+					"The current me doesn't have the same strength, in other words, right now this is just a shell.",
+					"Everything in the world is me, and I am all of the world.",
+					"The legend has become reality.",
+					"Your attacks have no effect on me.",
+					"Well, I hereby declare war on you all, the Fourth Great Ninja War!",
+					"To control others, you must know the darkness of their hearts."
+				]
+			},
+			"kimimaro": {
+				"name": "Kimimaro",
+				"says": [
+					"Well, how would you like to die?",
+					"We are born for a reason, and I firmly believe that there is an important reason to stay alive.",
+					"Maybe it's true... My body is sick and won't last much longer... But, I won't die... And I'm not alone... As someone who takes part in Orochimaru-sama's ambition...I will live forever in Orochimaru-sama's heart..."
+				]
+			},
+			"kimimaro_goninshu": {
+				"name": "君麻吕 音忍五人众",
+				"says": [
+					"好吧，想怎么个死法？",
+					"人是为了某种目的而降生的，我坚信，活着便有重要的使命。",
+					"也许的确是这样…我的身体病魔缠身，不能坚持很久…但是，我不会灭亡…而且我不是一个人…作为担当起大蛇丸大人一部分野心的人…我将在大蛇丸大人的心中永存…"
+				]
+			},
+			"sakura_byakugo": {
+				"name": "Sakura Haruno (Byakugo)",
+				"says": [
+					"I am always being protected by others, so I'm not in balance...Since this is the case, this time...I must be the one who protects those I cherish...",
+					"I've always...wished I could be a powerful ninja..."
+				]
+			},
+			"hinata": {
+				"name": "Hinata Hyuuga",
+				"says": [
+					"In front of the one I love...I can't afford to lose...",
+					"Never give up, that is my ninja way. !There are words I can say, and that is my way.",
+					"People are not perfect……so……| A person must have the strength to rise up despite their failures!"
+				]
+			},
+			"suigetsu": {
+				"name": "Suigetsu Hozuki",
+				"says": [
+					"A god of ninjas...how undignified...",
+					"What is our relationship?",
+					"Twice In A Row!"
+				]
+			},
+			"kabuto": {
+				"name": "Kabuto",
+				"says": [
+					"If you think you can get rid of me with ninjutsu of this level, you underestimated me...",
+					"You don't know who he really is.",
+					"Do you understand the pain of being nobody?"
+				]
+			},
+			"kabuto_s": {
+				"name": "Kabuto (Sage)",
+				"says": [
+					"If you think you can get rid of me with ninjutsu of this level, you underestimated me...",
+					"You don't know who he really is.",
+					"Do you understand the pain of being nobody?"
+				]
+			},
+			"kakashi_gsw": {
+				"name": "Kakashi Hatake (Genjutsu World)",
+				"says": [
+					"Ninjas can't think with common sense!",
+					"Don't worry, I will protect you even if I die. I will never let my partners die.",
+					"You can't beat me now, you don't understand what real strength is!"
+				]
+			},
+			"onoki": {
+				"name": "Onoki",
+				"says": [
+					".......Awaken.",
+					"This is all for peace.",
+					"I want to pick up the me I left behind here!"
+				]
+			},
+			"kenshin": {
+				"name": "绯村·剑心 浪客",
+				"says": [
+					"The sword is a murder weapon, swordsmanship is a way to kill, | no matter what pretty language is used to cover it up, that is the truth.",
+					"Although it's just a sword, it's enough to protect....those around me.",
+					"You have been taking care of me all this time, thank you so much, I am a wanderer, and I will walk the road again...",
+					"What the dead want to see most is not that their relatives avenging them, but them living happily.",
+					"It's not the sword what starts a new era, but the people who use it.",
+					"I am still Kenshin Himura, and this fact will never change!",
+					"I don't kill anymore and don't allow anyone to kill. You don't get to kill anymore!",
+					"This isn't a break; it's not an end; it is not an end, but a start......you may feel unsatisfied, but this is the end of it...",
+					"You must always be serious, otherwise, your opponent won't feel that...what you say is real.",
+					"Our will to survive is the strongest thing there is!",
+					"Dedicate your heart to the sword, this is the answer I found!"
+				]
+			},
+			"kenshin_battousai": {
+				"name": "Kenshin Himura (Battousai)",
+				"says": [
+					"The sword is a murder weapon, swordsmanship is a way to kill, | no matter what pretty language is used to cover it up, that is the truth.",
+					"Although it's just a sword, it's enough to protect....those around me.",
+					"You have been taking care of me all this time, thank you so much, I am a wanderer, and I will walk the road again...",
+					"What the dead want to see most is not that their relatives avenging them, but them living happily.",
+					"It's not the sword what starts a new era, but the people who use it.",
+					"I am still Kenshin Himura, and this fact will never change!",
+					"I don't kill anymore and don't allow anyone to kill. You don't get to kill anymore!",
+					"This isn't a break; it's not an end; it is not an end, but a start......you may feel unsatisfied, but this is the end of it...",
+					"You must always be serious, otherwise, your opponent won't feel that...what you say is real.",
+					"Our will to survive is the strongest thing there is!",
+					"Dedicate your heart to the sword, this is the answer I found!"
+				]
+			},
+			"xb_kenshin_sx": {
+				"name": "Himura Kenshin (Hitokiri Battosai)",
+				"says": [
+					"NURQTEFZIExPVkUVQ==",
+					"UEEgUUVVIExJIFRJQU4gWElBIERJIFJ",
+					"R1VBTiBESUFPIE5JIERFIEpJRSBNSSBSSBXQU5HIFpIQU4gQkE=",
+					"SFRUUFM6Ly9MSVVTSFVJX01JQU9NSUFPLkdJVEVFLklPLw=="
+				]
+			},
+			"random": {
+				"name": "Random Select"
+			},
+			"random_bleach": {
+				"name": "Random Select (Bleach)"
+			},
+			"random_naruto": {
+				"name": "Random Select (Naruto)"
+			},
+			"random_low": {
+				"name": "Random Select (Low Level Character)"
+			},
+			"random_medium": {
+				"name": "Random Select (Medium Level Character)"
+			},
+			"random_high": {
+				"name": "Random Select (High Level Character)"
+			},
+			"random_god": {
+				"name": "Random Select (God Level Character)"
+			},
+			"xb_placeholder_active": {
+				"name": "Event-This New Character is So Awesome"
+			},
+			"xb_ninja_1": {
+				"name": "Ninja 1"
+			},
+			"xb_ninja_2": {
+				"name": "Ninja 2"
+			},
+			"xb_ninja_earth1": {
+				"name": "Ninja (Earth)"
+			},
+			"xb_ninja_fire1": {
+				"name": "Ninja (Fire) 1"
+			},
+			"xb_ninja_fire2": {
+				"name": "Ninja (Fire) 2"
+			},
+			"xb_ninja_sand1": {
+				"name": "Ninja (Sand)"
+			},
+			"xb_ninja_thunder1": {
+				"name": "Ninja (Thunder)"
+			},
+			"xb_bear1": {
+				"name": "Bear"
+			},
+			"xb_bird1": {
+				"name": "Bird"
+			},
+			"xb_dog1": {
+				"name": "Dog"
+			},
+			"xb_pig1": {
+				"name": "Pig"
+			},
+			"deidara_old": {
+				"name": "[Old] Deidara",
+				"says": [
+					"Art is an explosion! Hmm.",
+					"My entrance is art! Hmm.",
+					"Art is a fleeting beauty, the moment it disappears, it's called beautiful. Hmm."
+				]
+			},
+			"gaara_old": {
+				"name": "[Old] Gaara",
+				"says": [
+					"Is that all you can do?"
+				]
+			},
+			"itachi_old": {
+				"name": "[Old] Itachi Uchiha",
+				"says": [
+					"Excellence can be quite annoying...",
+					"This is the truth of humanity, who think they know what they know, deny what they do not know, but only think they are right...",
+					"As long as people are living by their own knowledge and beliefs and are bound by them,|that's what we call reality. |However, knowledge and belief are ambiguous things, and reality may be just an illusion."
+				]
+			},
+			"pain_old": {
+				"name": "[Old] Pain",
+				"says": [
+					"......."
+				]
+			},
+			"sasuke_susanoo_old": {
+				"name": "[Old] Sasuke Uchiha [Eternal Mangekyo Sharingan]",
+				"says": [
+					"Too many limitations will only make us lose ourselves.",
+					"My loneliness is not comparable to being sad after being blamed for the death of your own parents.",
+					"I am an avenger, I was born in revenge, and in revenge I'll lose everything."
+				]
+			},
+			"naruto_kyubi_old": {
+				"name": "[旧版] 漩涡·鸣人 九尾查克拉模式",
+				"says": [
+					"As long as you're the best ninja in the village, you can become Hokage!",
+					"I'll never give up, because that is my ninja way!",
+					"Alright! I've taken a path I believe in, to live without regrets!"
+				]
+			},
+			"ulquiorra_old": {
+				"name": "[Old] Ulquiorra Cifer",
+				"says": [
+					"The Sun has been struck down by me.",
+					"I see everything.",
+					"Humanity, unpredictable creatures."
+				]
+			},
+			"ulquiorra_murcielago_old": {
+				"name": "[Old] Ulquiorra Cifer (Murcielago)",
+				"says": [
+					"The Sun has been struck down by me.",
+					"I see everything.",
+					"Humanity, unpredictable creatures."
+				]
+			},
+			"soifon_old": {
+				"name": "[Old] Soifon",
+				"says": [
+					"Your shadow is like...a meaningless poisonous needle...stitching its way to my death.",
+					"Your light is like... the thunder that gently hit the water tower...and cut off my way of life."
+				]
+			},
+			"juggo_old": {
+				"name": "[Old] Jugo",
+				"says": [
+					".......",
+					"HAHAHAHAHAHA!",
+					"I won't lose control again."
+				]
+			},
+			"obito_old": {
+				"name": "[Old] Masked Obito",
+				"says": [
+					"People who don't value their friends are lower than scum!",
+					"The more brutal the life, the greater is the hole in the heart.",
+					"There is no difference between hope and delusion in this world, |it's no more than a horrible rhetoric.",
+					"I am someone nobody wants to become..."
+				]
+			},
+			"byakuya_bankai_old": {
+				"name": "[Old] Byakuya Kuchiki (Bankai)",
+				"says": [
+					"Too slow. Even your fall is like this.",
+					"Oh... I never thought that a normal person could understand the feelings of the nobles.",
+					"A person like you died a thousand years earlier under my power."
+				]
+			},
+			"ichigo_vizard_old": {
+				"name": "[旧版·Ⅰ] 黑崎·一护 虚化 卍解",
+				"says": [
+					"Fighting by itself is for nothing but survival.",
+					"I don't know why, but it all feels amazing!",
+					"It's terrifying because we can't see it."
+				]
+			},
+			"ogihci_old": {
+				"name": "[旧版] 斩月 死神之力",
+				"says": [
+					"Tell me, what is the difference between a king and a mount? |Don't tell me the difference between two feet and four feet!",
+					"There's only one answer, and that is instinct! |It is engraved on the oldest of beings, a thorough and incomparable murderous instinct!",
+					"What you lack is that, this raw instinct! |That's why you are weaker than me!"
+				]
+			},
+			"naruto_ver2_old": {
+				"name": "[旧版] 漩涡·鸣人 尾兽化暴走",
+				"says": [
+					"只要你变成全村人都认可的最棒忍者，|你就可以把火影这个名字抢过来！",
+					"我是绝对不会放弃的，因为这就是我的忍道！",
+					"好！我决定了,我要走一条属于我自己的忍道,|朝着绝对不让自己后悔的道路一直大步的走下去！"
+				]
+			},
+			"sasuke_susanoo_old_new": {
+				"name": "[Old; Revamp] Sasuke Uchiha (Eternal Mangekyo Sharingan)",
+				"says": [
+					"Too many limitations will only make us lose ourselves.",
+					"My loneliness is not comparable to being sad after being blamed for the death of your own parents.",
+					"I am an avenger, I was born in revenge, and in revenge I'll lose everything."
+				]
+			},
+			"ichigo_bankai_old": {
+				"name": "[Old] Ichigo Kurosaki (Bankai)",
+				"says": [
+					"Fighting by itself is for nothing but survival.",
+					"I don't know why, but it all feels amazing!",
+					"It's terrifying because we can't see it."
+				]
+			},
+			"deidara_old_new": {
+				"name": "[Old; Revamp] Deidara",
+				"says": [
+					"Art is an explosion! Hmm.",
+					"My entrance is art! Hmm.",
+					"Art is a fleeting beauty, the moment it disappears, it's called beautiful. Hmm."
+				]
+			},
+			"itachi_old_new": {
+				"name": "[Old; Revamp] Itachi Uchiha",
+				"says": [
+					"Excellence can be quite annoying...",
+					"This is the truth of humanity, who think they know what they know, deny what they do not know, but only think they are in the right...",
+					"As long as people are living by their own knowledge and beliefs and are bound by them,|that's what we call reality. |However, knowledge and belief are ambiguous things, and reality may be just an illusion."
+				]
+			},
+			"toushirou_bankai_old": {
+				"name": "[Old] Toshiro Hitsugaya (Bankai)",
+				"says": [
+					"Under the strong sunlight, the footprints printed on ice disappear without a trace. | Don't be afraid of tricks, this world is built on lies.",
+					"Don't call me Toshiro, my name is Captain Hitsugaya!",
+					"Not Even Close!"
+				]
+			},
+			"suigetsu_old": {
+				"name": "[Old] Suigetsu Hozuki",
+				"says": [
+					"A god of ninjas...how undignified...",
+					"What is our relationship?",
+					"Twice In A Row!"
+				]
+			},
+			"ichigo_vizard_old_new": {
+				"name": "[旧版·Ⅱ] 黑崎·一护 虚化 卍解",
+				"says": [
+					"Fighting by itself is for nothing but survival.",
+					"I don't know why, but it all feels amazing!",
+					"It's terrible that we cannot see it."
+				]
+			},
+			"hinata_old": {
+				"name": "[Old] Hinata Hyuuga",
+				"says": [
+					"In front of the one I love...I can't afford to lose...",
+					"Never give up, that is my ninja way. !If you have something to say, you should say it, that is also my ninja way.",
+					"People are not perfect……so……| A person must have the strength to rise up despite their failures!"
+				]
+			},
+			"hinata_old_new": {
+				"name": "[Old; Revamp] Hinata Hyuuga",
+				"says": [
+					"In front of the one I love...I can't afford to lose...",
+					"Never give up, that is my ninja way. !If you have something to say, you should say it, that is also my ninja way.",
+					"People are not perfect……so……| A person must have the strength to rise up despite their failures!"
+				]
+			},
+			"sakura_byakugo_old": {
+				"name": "[Old] Sakura Haruno (Byakugo)",
+				"says": [
+					"I am always being protected by others, so I'm not in balance...Since this is the case, this time...I must be the one who protects those I cherish...",
+					"I've always...wished I could be a powerful ninja..."
+				]
+			},
+			"madara_old": {
+				"name": "[Old] Madara",
+				"says": [
+					"The current me doesn't have the same strength, in other words, right now this is just a shell.",
+					"Everything in the world is me, and I am all of the world.",
+					"The legend has become reality.",
+					"Your attacks have no effect on me.",
+					"Well, I hereby declare war on you all, the Fourth Great Ninja War!",
+					"To control others, you must know the darkness of their hearts."
+				]
+			},
+			"yoruichi_old": {
+				"name": "[Old] Yoruichi Shihoin",
+				"says": [
+					"If you lose now, you aren't coming back.",
+					"Do you really think this Flash Step can catch me? |If you want to catch me, just do it,|My Flash Step is beyond what you can catch up with.",
+					"Don't underestimate people, |I gave up the title of Squad Captain,|but I don't remember giving up any another name."
+				]
+			},
+			"rukia_shikai_old": {
+				"name": "[Old] Rukia Kuchiki (Shikai)",
+				"says": [
+					"Is reincarnation our fate? Or is it exaggerated? | If it is reincarnation, should the cycle of reincarnation be destroyed? | Or should we just accept it?",
+					"People believe because they don't know death."
+				]
+			},
+			"onoki_old": {
+				"name": "[Old] Onoki",
+				"says": [
+					"......Wake up.",
+					"This is all for the sake of peace.",
+					"I want to pick the me I once left back up!"
+				]
+			},
+			"orochimaru_old": {
+				"name": "[Old] Orochimaru",
+				"says": [
+					"This deal is just a trick to stop the opponent, and history will be remade from now on!",
+					"Tangible things get destroyed, but the intangible is eternal!",
+					"A body's life is too short....too limited..."
+				]
+			},
+			"pain_old_new": {
+				"name": "[Old; Revamp] Pain",
+				"says": [
+					"......"
+				]
+			},
+			"kakashi_kamui_old": {
+				"name": "[Old] Kakashi Hatake (Kamui)",
+				"says": [
+					"Ninjas can't think with common sense!",
+					"Don't worry, I will protect you even if I die. I will never let my partners die.",
+					"You can't beat me now, you don't understand what real strength is!"
+				]
+			},
+			"obito_trueColors_old": {
+				"name": "[Old] Obito Uchiha",
+				"says": [
+					"People who don't value their friends are lower than scum!",
+					"The more brutal the life, the greater is the hole in the heart.",
+					"There is no difference between hope and delusion in this world, |it's no more than a horrible rhetoric.",
+					"I am someone nobody wants to become..."
+				]
+			},
+			"sasuke_juin_old": {
+				"name": "[Old] Sasuke Uchiha (Curse Mark)",
+				"says": [
+					"Too many limitations will only make us lose ourselves.",
+					"My loneliness is not comparable to being sad after being blamed for the death of your own parents.",
+					"I am an avenger, I was born in revenge, and in revenge I'll lose everything."
+				]
+			},
+			"grimmjow_old": {
+				"name": "[Old] Grimmjow Jeagerjaquez",
+				"says": [
+					"It's not love, it's not light... Only destruction is proof of existence!",
+					"Ah hahahaha... This is just perfect, Soul Reaper, it's finally worth it killing you.",
+					"I don't understand, how could I lose to someone like you!"
+				]
+			}
+		}
+	}
+}
