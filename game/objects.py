@@ -3,7 +3,7 @@ import random
 from .settings import *
 
 class Projectile(pygame.sprite.Sprite):
-    def __init__(self, x, y, direction, owner):
+    def __init__(self, x, y, direction, owner, effect_type=None, effect_manager=None):
         super().__init__()
         self.owner = owner
         char_skill_data = SKILL_DATA.get(owner.name, {})
@@ -39,13 +39,30 @@ class Projectile(pygame.sprite.Sprite):
         self.speed = 15
         if direction == "left":
             self.speed = -15
+            
+        self.effect_type = effect_type
+        self.effect_manager = effect_manager
+        
+        # Custom Visuals based on effect_type
+        if self.effect_type == "spiral_blue":
+             self.image.fill((0,0,0,0)) # Clear
+             pygame.draw.circle(self.image, (0, 191, 255), (20, 10), 12, 2) # Outer ring
+             pygame.draw.circle(self.image, (135, 206, 250), (20, 10), 8) # Inner
+             pygame.draw.circle(self.image, (255, 255, 255), (20, 10), 4) # Core
+             self.color = (0, 191, 255)
 
     def update(self):
         self.rect.x += self.speed
         
         # 화면 밖으로 나가면 제거
+        # 화면 밖으로 나가면 제거
         if self.rect.right < 0 or self.rect.left > SCREEN_WIDTH:
             self.kill()
+            
+        # Trail Effect
+        if self.effect_type and self.effect_manager:
+             if random.random() < 0.5: # 50% chance per frame
+                 self.effect_manager.create_effect(self.rect.centerx, self.rect.centery, "charge", self.color)
 
 class EnergyClash(pygame.sprite.Sprite):
     """

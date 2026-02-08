@@ -28,7 +28,10 @@ class SoundManager:
             "attack": "sfx_attack.wav",
             "hit": "sfx_hit.wav",
             "select": "sfx_select.wav",
-            "dash": "sfx_jump.wav" # Reuse for dash
+            "dash": "sfx_jump.wav", # Reuse for dash
+            "block": "sfx_select.wav", # Placeholder for block/poof
+            "rasengan": "sfx_attack.wav", # Placeholder for energy skill
+            "clone": "sfx_jump.wav" # Placeholder for clone poof
         }
         
         for name, filename in sound_files.items():

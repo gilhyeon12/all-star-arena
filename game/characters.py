@@ -21,6 +21,7 @@ class Character(pygame.sprite.Sprite):
         self.name = name
         self.sound_manager = sound_manager
         self.animations = {}
+        self.direction = "right" # Initialize direction before loading animations
         self.load_animations(name)
         
         self.state = "idle"
@@ -47,7 +48,9 @@ class Character(pygame.sprite.Sprite):
         
         self.change_x = 0
         self.change_y = 0
-        self.direction = "right" 
+        self.change_x = 0
+        self.change_y = 0
+        # self.direction = "right" # Already initialized above 
         
         # 전투 관련
         self.attack_cooldown = 0
@@ -111,6 +114,19 @@ class Character(pygame.sprite.Sprite):
                     animation_list.append(placeholder_img)
             
             self.animations[action] = animation_list
+
+        # [NEW] Rasengan Animation Load
+        if name.lower() == "naruto":
+            rasengan_path = "game/images/naruto_rasengan.png"
+            if os.path.exists(rasengan_path):
+                img = pygame.image.load(rasengan_path).convert_alpha()
+                img = pygame.transform.scale(img, (CHARACTER_WIDTH, CHARACTER_HEIGHT))
+                if self.direction == "left":
+                     img = pygame.transform.flip(img, True, False)
+                self.animations['rasengan'] = [img]
+                print("Loaded Normal Rasengan Image")
+            else:
+                self.animations['rasengan'] = self.animations['attack'] # Fallback
 
     def update_animation(self):
         """상태에 따른 애니메이션 프레임 업데이트"""
@@ -404,9 +420,15 @@ class Character(pygame.sprite.Sprite):
             #      self.ki += 0.1
 
 
-            # 1. 투사체 (수리검, 에너지파)
+            # 2. 투사체 (나선환 등)
             if skill_type == 'projectile':
-                self.last_skill_used = 'projectile' 
+                self.last_skill_used = 'projectile'
+                if skill_key == 'U' and self.original_name == "Naruto":
+                     self.state = "rasengan"
+                     # Ensure animation updates immediately
+                     self.frame_index = 0
+                else:
+                     self.state = "attack" 
                 
             # 2. 소환 (분신술, 소환수)
             elif skill_type == 'summon':
@@ -509,16 +531,18 @@ class Character(pygame.sprite.Sprite):
         final_damage = int(damage * scaling)
         print(f"Hit! Combo: {self.combo_count}, Scaling: {scaling:.2f}, Dmg: {damage}->{final_damage}")
 
-        # 방어 중이면 데미지 면제 및 게이지 감소 -> 80% 감소로 변경
+        # 방어 성공 (데미지 0)
         if self.is_guarding and self.guard_gauge > 0:
-            final_damage = int(damage * 0.2) # 80% 감소
-            if final_damage < 1: final_damage = 1 # 최소 1 데미지
+            final_damage = 0
             
-            self.guard_gauge -= damage # 게이지는 원래 데미지 만큼 감소
-            print(f"{self.name} Guarded! Reduced Dmg: {final_damage} (Gauge: {self.guard_gauge})")
+            self.guard_gauge -= damage # 게이지는 감소
+            print(f"{self.name} Guarded! No Damage (Gauge: {self.guard_gauge})")
+            if self.sound_manager: self.sound_manager.play_sfx("block")
+            
             if self.guard_gauge <= 0:
                  self.guard_gauge = 0
                  self.is_guarding = False # Break
+                 print(f"{self.name} Guard Broken!")
         else:
             final_damage = damage
             
@@ -582,9 +606,64 @@ class Character(pygame.sprite.Sprite):
             # 여기서는 change_x에 곱해주는 방식보다, move 메서드가 multiplier를 고려하도록 수정 필요.
             self.speed_multiplier = trans_data.get("speed_mult", 1.2)
             
-            # 색상 변경 (틴트)
+            # 색상 변경 (틴트) - Default fallback
             color = trans_data.get("color", (255, 255, 255))
             
+            # [NEW] 이미지 교체 시도 (전용 이미지가 있으면 우선 사용)
+            # 파일명 규칙: lowercase_name_sage_mode.png 등?
+            # 여기서는 naruto_sage_mode.png 로 하드코딩하거나 규칙성 부여
+            # 규칙: original_name + "_" + transformation_key? 
+            # 단순하게: 'naruto_sage_mode.png' 확인
+            
+            import os
+            try:
+                # Construct expected filename from transformation name (e.g., "Naruto (Sage Mode)" -> "naruto_sage_mode.png")
+                # Remove parenthesis, spaces to underscores
+                clean_name = self.name.lower().replace(" ", "_").replace("(", "").replace(")", "")
+                image_path = f"game/images/{clean_name}.png"
+                
+                if os.path.exists(image_path):
+                    print(f"Loading Transformation Image: {image_path}")
+                    loaded_image = pygame.image.load(image_path).convert_alpha()
+                    # Scale logic (copy from __init__ or helper)
+                    # Assuming standard size for now or reuse existing rect size
+                    loaded_image = pygame.transform.scale(loaded_image, (CHARACTER_WIDTH, CHARACTER_HEIGHT))
+                    
+                    if self.direction == "left":
+                        loaded_image = pygame.transform.flip(loaded_image, True, False)
+                        
+                    self.image = loaded_image
+                    
+                    # Update Animations
+                    # We only have one image, so replace ALL frames of ALL animations with this image.
+                    # This ensures the transformation visual persists across all states.
+                    for action in self.animations:
+                        self.animations[action] = [loaded_image]
+
+                    # [NEW] Sage Mode Rasengan Override
+                    sage_rasengan_path = "game/images/naruto_sage_rasengan.png"
+                    if os.path.exists(sage_rasengan_path):
+                        r_img = pygame.image.load(sage_rasengan_path).convert_alpha()
+                        r_img = pygame.transform.scale(r_img, (CHARACTER_WIDTH, CHARACTER_HEIGHT))
+                        if self.direction == "left":
+                            r_img = pygame.transform.flip(r_img, True, False)
+                        self.animations['rasengan'] = [r_img] # Override specific animation
+                        print("Loaded Sage Mode Rasengan Image")
+
+                    # 틴트 적용 안함 (이미지가 있으므로)
+                    print(f"{self.original_name} transformed into {self.name} (Image Mode)!")
+                    
+                    # BGM Hijacking (Copy from below to ensure it runs)
+                    if GAME_SETTINGS.get("bgm_hijack", False) and self.sound_manager:
+                         theme_path = f"game/sounds/{self.original_name.lower()}_theme.wav"
+                         self.sound_manager.play_custom_bgm(theme_path)
+
+                    return True
+                    
+            except Exception as e:
+                print(f"Failed to load transformation image: {e}")
+
+            # 이미지가 없으면 기존 틴트 로직 수행
             # 모든 애니메이션 프레임에 틴트 적용
             for action, frames in self.animations.items():
                 new_frames = []

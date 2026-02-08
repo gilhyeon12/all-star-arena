@@ -941,6 +941,38 @@ class Game:
             if self.player1.support_cooldown > 0:
                 return
 
+            # [NEW] Team Mode Logic (Direct Tag)
+            if self.is_team_mode:
+                # Find next alive teammate
+                next_idx = self.p1_active_idx
+                found = False
+                for _ in range(len(self.p1_team) - 1):
+                    next_idx = (next_idx + 1) % len(self.p1_team)
+                    if self.p1_team[next_idx].hp > 0:
+                        found = True
+                        break
+                
+                if found:
+                    next_char = self.p1_team[next_idx]
+                    print(f"Team Tag! Swapping to {next_char.name}")
+                    current_char = self.player1
+                    self.all_sprites.remove(current_char)
+                    
+                    self.player1 = next_char
+                    self.p1_active_idx = next_idx
+                    
+                    # Position update
+                    self.player1.rect.center = current_char.rect.center
+                    self.player1.direction = current_char.direction
+                    self.player1.change_x = current_char.change_x
+                    self.player1.change_y = current_char.change_y
+                    
+                    self.all_sprites.add(self.player1)
+                    self.player1.support_cooldown = SUPPORT_COOLDOWN
+                    self.effect_manager.create_effect(self.player1.rect.centerx, self.player1.rect.centery, "block")
+                    self.sound_manager.play_sfx("select")
+                return
+
             support_idx = 1 - self.p1_active_idx
             next_char = self.p1_team[support_idx]
             
@@ -948,7 +980,7 @@ class Game:
             if next_char.hp <= 0:
                 print("Cannot swap/call defeated character!")
                 return
-
+            
             # Case 1: 이미 나와있는 경우 (어시스트 상태) -> 태그 (Chain)
             if next_char in self.all_sprites:
                 print(f"Assist Chain! Swapping to {next_char.name}")
@@ -990,6 +1022,34 @@ class Game:
 
         elif player_num == 2:
             if self.player2.support_cooldown > 0:
+                return
+
+            if self.is_team_mode:
+                next_idx = self.p2_active_idx
+                found = False
+                for _ in range(len(self.p2_team) - 1):
+                    next_idx = (next_idx + 1) % len(self.p2_team)
+                    if self.p2_team[next_idx].hp > 0:
+                        found = True
+                        break
+                
+                if found:
+                    next_char = self.p2_team[next_idx]
+                    current_char = self.player2
+                    self.all_sprites.remove(current_char)
+                    
+                    self.player2 = next_char
+                    self.p2_active_idx = next_idx
+                    
+                    self.player2.rect.center = current_char.rect.center
+                    self.player2.direction = current_char.direction
+                    self.player2.change_x = current_char.change_x
+                    self.player2.change_y = current_char.change_y
+                    
+                    self.all_sprites.add(self.player2)
+                    self.player2.support_cooldown = SUPPORT_COOLDOWN
+                    self.effect_manager.create_effect(self.player2.rect.centerx, self.player2.rect.centery, "block")
+                    print(f"P2 Team Tag to {next_char.name}")
                 return
 
             support_idx = 1 - self.p2_active_idx
@@ -1674,22 +1734,28 @@ class Game:
 
         if player.last_skill_used == 'projectile':
             # 투사체 생성
-            proj = self.Projectile(player.rect.centerx, player.rect.centery, player.direction, player)
-            # 투사체 색상도 시리즈 테마색으로? (Projectile 클래스 수정 필요하지만 여기선 생략 또는 추후 적용)
+            # 고유 이펙트 전달
+            p_effect = unique_effect if unique_effect else None
+            if p_effect and "spiral" in p_effect:
+                self.sound_manager.play_sfx("rasengan")
+                
+            proj = self.Projectile(player.rect.centerx, player.rect.centery, player.direction, player, effect_type=p_effect, effect_manager=self.effect_manager)
             self.projectiles.add(proj)
             player.last_skill_used = None
             
         elif player.last_skill_used == 'summon':
             # 분신 생성 이펙트 (연기)
             self.effect_manager.create_effect(player.rect.centerx, player.rect.centery, "smoke")
+            self.sound_manager.play_sfx("block") # 'Poof' sound replacement
             
             # 분신 생성
-            clone = Character(player.rect.x, player.rect.y, f"game/images/{player.original_name.lower()}.png", f"{player.name} Clone")
-            clone.hp = 15
-            clone.max_hp = 15
+            clone = Character(player.rect.x, player.rect.y, f"game/images/{player.original_name.lower()}.png", f"{player.name} Clone", self.sound_manager)
+            clone.hp = 1 # 한 대 맞으면 사라짐
+            clone.max_hp = 1
             clone.direction = player.direction
             # 짙은 색으로 구분
             clone.image.set_alpha(150) 
+            clone.lifespan = 600 # 10초 후 소멸
             self.clones.add(clone)
             player.last_skill_used = None
 
@@ -1752,6 +1818,14 @@ class Game:
             else: clone.move_right()
         else:
             clone.attack('J') # 기본 공격만
+            
+        # 수명 체크
+        if hasattr(clone, 'lifespan'):
+            clone.lifespan -= 1
+            if clone.lifespan <= 0:
+                clone.kill()
+                self.effect_manager.create_effect(clone.rect.centerx, clone.rect.centery, "smoke")
+                self.sound_manager.play_sfx("block")
 
 
     def update_bot_ai(self):
@@ -1907,12 +1981,55 @@ class Game:
         # ...
         
         # 3. 승패 판정 (라운드 종료 체크 - Finish Timer가 0일 때만)
+        # 3. 승패 판정 (라운드 종료 체크 - Finish Timer가 0일 때만)
         if self.finish_timer == 0:
             round_winner = None
+            
+            # P1 Death Check
             if self.player1.hp <= 0:
-                round_winner = 2
+                if self.is_team_mode and self.p1_active_idx < len(self.p1_team) - 1:
+                     # Swap to next character
+                     print(f"P1 Character {self.player1.name} Defeated! Swapping...")
+                     self.all_sprites.remove(self.player1) # Remove dead char
+                     self.p1_active_idx += 1
+                     self.player1 = self.p1_team[self.p1_active_idx]
+                     
+                     # Setup new char
+                     self.player1.rect.x = -50 # Enter from left
+                     self.player1.rect.y = SCREEN_HEIGHT - 150
+                     self.player1.direction = "right"
+                     self.player1.change_x = 0
+                     self.player1.change_y = 0
+                     self.player1.state = "idle"
+                     self.player1.invincible_timer = 60 # Entry safe time
+                     
+                     self.all_sprites.add(self.player1)
+                     self.sound_manager.play_sfx("select") # Swap sound
+                else:
+                     round_winner = 2
+
+            # P2 Death Check
             elif self.player2.hp <= 0:
-                round_winner = 1
+                if self.is_team_mode and self.p2_active_idx < len(self.p2_team) - 1:
+                     # Swap to next character
+                     print(f"P2 Character {self.player2.name} Defeated! Swapping...")
+                     self.all_sprites.remove(self.player2)
+                     self.p2_active_idx += 1
+                     self.player2 = self.p2_team[self.p2_active_idx]
+                     
+                     # Setup new char
+                     self.player2.rect.x = SCREEN_WIDTH + 50 # Enter from right
+                     self.player2.rect.y = SCREEN_HEIGHT - 150
+                     self.player2.direction = "left"
+                     self.player2.change_x = 0
+                     self.player2.change_y = 0
+                     self.player2.state = "idle"
+                     self.player2.invincible_timer = 60
+                     
+                     self.all_sprites.add(self.player2)
+                     self.sound_manager.play_sfx("select")
+                else:
+                     round_winner = 1
                 
             if round_winner:
                 # Start Finish Sequence
